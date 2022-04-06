@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MVCTestModelStoreContainer" CdmEntityContainer="MVCTestEntities2">
+    <EntitySetMapping Name="Country_Table">
+      <EntityTypeMapping TypeName="MVCTestModel.Country_Table">
+        <MappingFragment StoreEntitySet="Country_Table">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State_Table">
+      <EntityTypeMapping TypeName="MVCTestModel.State_Table">
+        <MappingFragment StoreEntitySet="State_Table">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_SignUp_Table">
+      <EntityTypeMapping TypeName="MVCTestModel.User_SignUp_Table">
+        <MappingFragment StoreEntitySet="User_SignUp_Table">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserMail" ColumnName="UserMail" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City_Table">
+      <EntityTypeMapping TypeName="MVCTestModel.City_Table">
+        <MappingFragment StoreEntitySet="City_Table">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orgnization_Table">
+      <EntityTypeMapping TypeName="MVCTestModel.Orgnization_Table">
+        <MappingFragment StoreEntitySet="Orgnization_Table">
+          <ScalarProperty Name="LinkedinURL" ColumnName="LinkedinURL" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+          <ScalarProperty Name="Addresss" ColumnName="Addresss" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="NoOFEmployee" ColumnName="NoOFEmployee" />
+          <ScalarProperty Name="Specialities" ColumnName="Specialities" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
+          <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

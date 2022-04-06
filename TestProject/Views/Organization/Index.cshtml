@@ -1,0 +1,116 @@
+﻿@model IEnumerable<TestProject.Models.OrgViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Organizations</h2>
+
+<p style="margin-left:1000px">
+    <a href="AddOrg" class="btn btn-primary">Add Organization</a>
+    @*@Html.ActionLink("Add Organization", "AddOrg")*@
+</p>
+@using (Html.BeginForm("Index", "Organization", FormMethod.Get))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @if (Model != null)
+            {
+                <table class="table table-bordered table-responsive">
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Organization Name")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Website")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Specialities")
+                        </th>
+                        <th>
+                            @Html.DisplayName("No Of Employee")
+                        </th>
+                        @*<th>
+                        @Html.DisplayNameFor(model => model.IsActive)
+                    </th>*@
+                    <th>
+                        @Html.DisplayName("Country")
+                    </th>
+                    <th>
+                        @Html.DisplayName("State")
+                    </th>
+                    <th>
+                        @Html.DisplayName("City")
+                    </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Addresss)
+                        </th>
+                        <th>
+                            @Html.DisplayName("Office No")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Mobile No")
+                        </th>
+                        <th>
+                            @Html.DisplayName("LinkedIn URL")
+                        </th>
+                        <th>Action</th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrganizationName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Website)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Specialities)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NoOFEmployee)
+                            </td>
+                            @*<td>
+                            @Html.DisplayFor(modelItem => item.IsActive)
+                        </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CountryName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StateName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CityName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Addresss)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OfficePhone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MobileNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LinkedinURL)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "EditOrg", new { id = item.OrgId }) |
+                                @Html.ActionLink("Delete", "DeleteOrg", new { id = item.OrgId })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            }
+                else
+                {
+                    <h3>No Data Found</h3>
+                }
+        </div>
+    </div>
+    
+}

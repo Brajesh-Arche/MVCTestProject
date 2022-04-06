@@ -1,0 +1,106 @@
+﻿@model TestProject.Models.UserModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arche | Log in</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition login-page" style="background-image: url('../../Assets/img/Login3.png');height:100%;background-size:cover;opacity:0.90;background-position:center; background-repeat:no-repeat ">
+    <div class="login-box">
+        <div class="login-logo">
+            <div></div>
+            <a href="Login"style="color:darkorange"><b>Arche</b>Softronix</a>
+        </div>
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+        {
+        <!-- /.login-logo -->
+           <div class="card">
+               <div class="card-body login-card-body" style="background-color:darkgray">
+                   <p class="login-box-msg">Sign in to start your session</p>
+                   <div class="alert-default-danger">@TempData["Message"]</div><br />
+                   @*<form action="Login" method="post">*@
+                   <div class="input-group mb-3">
+                       @Html.LabelFor(x => x.UserMail)
+                       <div class="input-group-append" style="margin-left:40px">
+                           <div>
+                               @Html.EditorFor(x => x.UserMail)
+                           </div>
+                       </div>
+                       <div class="alert-default-warning"> @Html.ValidationMessageFor(x => x.UserMail)</div>
+                   </div>
+                   <div class="input-group mb-3">
+                       @Html.LabelFor(x => x.Password)
+                       <div class="input-group-append" style="margin-left:10px">
+                           <div>
+                               @Html.EditorFor(x => x.Password)
+
+                           </div>
+                       </div>
+                       <div class="alert-default-warning">
+                           @Html.ValidationMessageFor(x => x.Password)
+                       </div>
+                   </div>
+                   @*<div class="row">
+        <div class="col-8">
+            <div class="icheck-primary">
+                <input type="checkbox" id="remember">
+                <label for="remember">
+                    Remember Me
+                </label>
+            </div>
+        </div>*@
+                   <!-- /.col -->
+                   <div class="col-4">
+                       <button type="submit" class="btn btn-dark btn-block" style="margin-left:200px">Sign In</button>
+                   </div>
+                   <!-- /.col -->
+               </div>
+          </div>
+@*</form>*@
+
+                <div class="social-auth-links text-center mb-3">
+                    <p>- OR -</p>
+                    <a href="#" class="btn btn-block btn-primary">
+                        <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+                    </a>
+                    <a href="#" class="btn btn-block btn-danger">
+                        <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                    </a>
+                </div>
+                <!-- /.social-auth-links -->
+
+                @*<p class="mb-2">
+                    <a href="forgot-password.html">I forgot my password</a>
+                </p>*@
+                <p class="mb-0">
+                    <a href="Account/SignUp" class="text-center">Register a new membership</a>
+                </p>
+            //</div>
+            <!-- /.login-card-body -->
+       //</div>
+        }
+    </div>
+    <!-- /.login-box -->
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+</body>
+</html>
