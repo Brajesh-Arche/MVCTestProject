@@ -33,9 +33,11 @@ namespace TestProject.Models
         public string Addresss { get; set; }
         [Display(Name = "Office Phone")]
         [DataType(DataType.PhoneNumber)]
+        [Phone]
         public decimal? OfficePhone { get; set; }
         [Display(Name = "Mobile No")]
         [DataType(DataType.PhoneNumber)]
+        [Phone]
         public decimal? MobileNo { get; set; }
         [Display(Name = "LinkedIn Url")]
         public string LinkedinURL { get; set; }
